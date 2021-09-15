@@ -9,7 +9,7 @@ import typing as t
 
 
 class Md5Client(object):
-    """ md5算法 """
+    """ md5算法类 """
 
     def __init__(self, *args: t.Any, **kwargs: t.Any) -> None:
         """ 初始化实例
