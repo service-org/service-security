@@ -7,9 +7,10 @@ from __future__ import unicode_literals
 import typing as t
 
 from logging import getLogger
-from service_security.core.md5 import Md5Algorithm
+
 from service_core.core.context import WorkerContext
 from service_core.core.service.dependency import Dependency
+from service_security.core.algorithms.md5 import Md5Algorithm
 
 logger = getLogger(__name__)
 
