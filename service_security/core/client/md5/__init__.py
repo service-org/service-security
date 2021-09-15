@@ -8,7 +8,7 @@ import hashlib
 import typing as t
 
 
-class Md5Algorithm(object):
+class MD5Client(object):
     """ md5算法 """
 
     def __init__(self, *args: t.Any, **kwargs: t.Any) -> None:
