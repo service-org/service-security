@@ -20,7 +20,7 @@ class Md5Client(object):
         pass
 
     @staticmethod
-    def encrypt(data) -> t.Text:
+    def encrypt(data: bytes) -> t.Text:
         """ 加密数据
 
         @param data: 原始数据
