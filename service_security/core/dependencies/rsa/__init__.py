@@ -31,6 +31,7 @@ class Rsa(Dependency):
         @param encrypt_options: 加密配置
         """
         self.alias = alias
+        self.client = None
         self.encrypt_options = encrypt_options or {}
         super(Rsa, self).__init__(**kwargs)
 
@@ -42,10 +43,11 @@ class Rsa(Dependency):
         encrypt_options = self.container.config.get(f'{SECURITY_CONFIG_KEY}.{self.alias}.rsa.encrypt_options', {})
         # 防止YAML中声明值为None
         self.encrypt_options = (encrypt_options or {}) | self.encrypt_options
+        self.client = RsaClient(**self.encrypt_options)
 
     def get_instance(self, context: WorkerContext) -> t.Any:
         """ 获取注入对象
         @param context: 上下文对象
         @return: t.Any
         """
-        return RsaClient(**self.encrypt_options)
+        return self.client
