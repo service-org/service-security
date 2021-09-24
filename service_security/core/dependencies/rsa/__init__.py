@@ -8,7 +8,6 @@ import typing as t
 
 from logging import getLogger
 
-from service_core.core.context import WorkerContext
 from service_security.core.client.rsa import RsaClient
 from service_security.constants import SECURITY_CONFIG_KEY
 from service_core.core.service.dependency import Dependency
@@ -45,9 +44,9 @@ class Rsa(Dependency):
         self.encrypt_options = (encrypt_options or {}) | self.encrypt_options
         self.client = RsaClient(**self.encrypt_options)
 
-    def get_instance(self, context: WorkerContext) -> t.Any:
+    def get_instance(self) -> t.Any:
         """ 获取注入对象
-        @param context: 上下文对象
+
         @return: t.Any
         """
         return self.client
