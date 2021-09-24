@@ -44,9 +44,9 @@ class Rsa(Dependency):
         self.encrypt_options = (encrypt_options or {}) | self.encrypt_options
         self.client = RsaClient(**self.encrypt_options)
 
-    def get_instance(self) -> t.Any:
+    def get_instance(self) -> RsaClient:
         """ 获取注入对象
 
-        @return: t.Any
+        @return: RsaClient
         """
         return self.client
