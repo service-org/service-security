@@ -34,7 +34,7 @@ class RsaClient(object):
         public_obj = PKCS1_v1_5.new(RSA.importKey(self.public_key))
         result = b''
         for i in range(0, len(data), step):
-            result += public_obj.encrypt(data[i:i + step])
+            result += public_obj.encrypt(data[i:i+step])
         return result
 
     def decrypt(self, data: bytes, step: int = 128) -> bytes:
@@ -49,5 +49,5 @@ class RsaClient(object):
         private_obj = PKCS1_v1_5.new(RSA.importKey(self.private_key))
         result = b''
         for i in range(0, len(data), step):
-            result += private_obj.decrypt(data[i:i + step], b'')
+            result += private_obj.decrypt(data[i:i+step], b'')
         return result
