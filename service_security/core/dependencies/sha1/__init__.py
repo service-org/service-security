@@ -18,6 +18,8 @@ logger = getLogger(__name__)
 class Sha1(Dependency):
     """ Md5依赖类 """
 
+    name = 'Sha1'
+
     def __init__(
             self,
             alias: t.Text,

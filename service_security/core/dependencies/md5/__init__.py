@@ -18,6 +18,8 @@ logger = getLogger(__name__)
 class Md5(Dependency):
     """ Md5依赖类 """
 
+    name = 'Md5'
+
     def __init__(
             self,
             alias: t.Text,

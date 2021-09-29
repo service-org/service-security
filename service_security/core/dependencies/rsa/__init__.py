@@ -18,6 +18,8 @@ logger = getLogger(__name__)
 class Rsa(Dependency):
     """ Rsa依赖类 """
 
+    name = 'Rsa'
+
     def __init__(
             self,
             alias: t.Text,
