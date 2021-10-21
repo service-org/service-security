@@ -8,7 +8,7 @@ import typing as t
 from logging import getLogger
 from Crypto.Cipher import AES
 
-from mixins.aes import AesMixin
+from .mixins.aes import AesMixin
 
 logger = getLogger(__name__)
 
