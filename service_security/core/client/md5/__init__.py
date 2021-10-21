@@ -20,12 +20,14 @@ class Md5Client(object):
         pass
 
     @staticmethod
-    def encrypt(data: bytes) -> t.Text:
+    def encrypt(data: bytes, step: int = 128) -> t.Text:
         """ 加密数据
 
         @param data: 原始数据
+        @param step: 加密步长
         @return: t.Text
         """
         md5 = hashlib.md5()
-        md5.update(data)
+        for i in range(0, len(data), step):
+            md5.update(data[i:i + step])
         return md5.hexdigest()
